@@ -1,0 +1,72 @@
+:root {
+    --blue:var(--blue);
+    --red:var(--red);
+    --green:var(--green);
+    --yellow:var(--yellow);
+    --profileshadow:0px 0px 10px 0px rgba(0,0,0,0.75);
+    --hrColor:black;
+    --cardColor:rgba(0,0,0,0.75);
+    --buttonbg:var(--blue);
+    --inputcolor:var(--blue);
+    --photo:var(--buttonbg);
+    --video:#ff0000;
+    --location:#00ff00;
+    --shedule:#0000ff;
+}
+
+.App{
+    background-color:var(--cardColor);
+    color:var(--hrColor);
+    box-shadow:var(--profileshadow);
+    border-radius:10px;
+    padding:10px;
+    margin:10px;
+    width:100%;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.blur{
+    filter:blur(5px);
+    position: obsolute;
+    width:22rem;
+    height:22rem;
+    border-radius:50px;
+    background-color:var(--cardColor);
+}
+
+.button{
+    background-color:var(--buttonbg);
+    color:white;
+    border-radius:10px;
+    padding:10px;
+    margin:10px;
+    width:100%;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.button:hover{
+    background-color:var(--buttonbg);
+    color:white;
+    border-radius:10px;
+    padding:10px;
+    margin:10px;
+    width:100%;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items:center;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
