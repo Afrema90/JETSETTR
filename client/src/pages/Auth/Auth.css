@@ -7,11 +7,12 @@ position: relative;
 display: flex;
 }
 
-.logo {
+.logo{
     border-radius: 300% 0px 300% 300%;
-    z-index: 10;
-    scale: 80%;
-    margin: auto;
+    z-index: 2;
+    width: 400px;
+    height: 400px;
+    margin: 1.5em;
 }
 
 .welcome {
@@ -41,18 +42,19 @@ color: white;
 }
 
 .loginForm {
-    margin: 0 auto .25em auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     color: white;
+    margin-top: -25px auto;
 }
 
 .login__button {
     margin: .5em;
-    padding: .5em;
+    padding: .75em;
     border-radius: 10px;
     font-weight: boldest;
+    font-size: 1em;
     cursor: pointer;
 }
 
@@ -72,7 +74,8 @@ color: white;
     padding: .5em;
     color: white;
     font-weight: boldest;
-    font-size: 1.5em;
+    font-size: 1.25em;
+    margin: auto 1em;
 }
 
 .signUpBox a {
@@ -81,7 +84,7 @@ color: white;
 }
 
 .signUpBox a:hover {
-    text-shadow:  5px 3px 3px rgb(190, 85, 0);
-    background-color: rgb(0, 15, 88);
-    transition: all 1s;
+    color:  rgb(190, 85, 0);
+font-weight: boldest;    
+transition: all 1s;
 }
