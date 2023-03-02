@@ -1,6 +1,7 @@
 import React from 'react';
 import "./Auth.css";
-import Logo from "../../images/Jetsettr (1).png";
+import Logo from "../../images/Jetsettr.png";
+
 
 const Auth = () => {
     return (
