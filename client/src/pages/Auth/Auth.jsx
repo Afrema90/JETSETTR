@@ -7,7 +7,7 @@ const Auth = () => {
     <div className="auth">
             <div className="auth__container">
                 <img src={Logo} alt="" />
-                <div className="JetSETTER">
+                <div className="JetSettr">
                 <h1>Auth</h1>
             </div>
         </div>
