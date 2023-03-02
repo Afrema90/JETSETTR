@@ -4,13 +4,15 @@ import Logo from "../../images/Jetsettr (1).png";
 
 const Auth = () => {
     return (
-    <div className="auth">
-            <div className="auth__container">
-                <img src={Logo} alt="" />
-                <div className="JetSETTER">
-                <h1>Auth</h1>
-            </div>
-        </div>
+    <div className="auth"> 
+    
+             <div className="logo__container"> 
+            <h1 className="welcome">Welcome to Jetsettr</h1>
+                <img className="logo" src={Logo} alt="jetsettr-logo" />
+                {/* <div className="JetSETTR"> */}
+               
+            </div> 
+        {/* </div> */}
         <LogIn/>
         </div>
     );
@@ -18,32 +20,27 @@ const Auth = () => {
 
 function LogIn() {
     return (
-        <form>
-        <div className="login">
-            <div className="login__container">
+        <><form className="loginForm">
                 <h1>Log In</h1>
-            </div>
             <input
                 type="text"
                 placeholder="Username" 
             className="infoInput"
-            name="username"
-            />
-        </div><div>
+            name="username"/>
                 <input
                     type="password"
-                    className='login__input'
+                    className='infoInput'
                     placeholder="Password"
-                   
-            name="password"
-        />
-        </div>
-        <div>
-                <span style={{ fontSize: "12px" }}>
+                    name="password"/>
+       
+                <span style={{ fontSize: "14px" }}>
                     Don't forget to login</span>
            <button className="login__button">Login</button>
-            </div>
-        </form>
+             </form>
+           <div className="signUpBox">
+            <p>Don't have an account?</p>
+<a href="/SignUp">Sign Up</a>
+</div></>
     );
 };
 
@@ -74,9 +71,7 @@ function LogIn() {
 //     );
 // }
 
-            
 export default Auth;
-
 
 
 

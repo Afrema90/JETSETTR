@@ -2,18 +2,23 @@ import React from 'react';
 import "./app.css";
 import Auth from "./pages/Auth/Auth.jsx";
 import "./pages/Auth/Auth.css"
+// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+// import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 
 import Home from "./pages/Home/Home.jsx";
 import "./pages/Home/Home.css";
 import Profile from "./pages/Profile/Profile";
 
+
+// const client = new ApolloClient({
+//   uri: '/graphql',
+//   cache: new InMemoryCache(),
+// });
+
 function App() {
   return (
     <div className="App">
-    <Auth />
-      <Home />
-      <Profile /> */
-      <h1>BIG DATA</h1>
+    <Auth /> 
     </div>
   );
 }

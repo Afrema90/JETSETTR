@@ -1,12 +1,6 @@
 const express = require('express');
-<<<<<<< HEAD
 const { ApolloServer, gql } = require('apollo-server-express');
 const path = require('path');
-=======
-const{ApolloServer, gql} = require('apollo-server-express');
-//const {typeDefs, resolvers} = require('./schema');
-
->>>>>>> 50cc4efeadc8a77241b1ad6775080d5124cc2d05
 
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
@@ -33,7 +27,7 @@ app.get('/', (req, res) => {
 // Create a new instance of an Apollo server with the GraphQL schema
 const startApolloServer = async (typeDefs, resolvers) => {
   await server.start();
-  server.applyMiddleware({ app });
+  server.applyMiddleware({ App });
   
   db.once('open', () => {
     app.listen(PORT, () => {
