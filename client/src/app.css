@@ -33,9 +33,10 @@
     filter:blur(5px);
     position: obsolute;
     width:22rem;
-    height:22rem;
+    height:14rem;
     border-radius:50px;
-    background-color:var(--cardColor);
+    background: #A6DDF0;
+    filter: blur(72px)
 }
 
 .button{
