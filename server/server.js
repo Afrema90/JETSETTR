@@ -1,6 +1,12 @@
 const express = require('express');
+<<<<<<< HEAD
 const { ApolloServer, gql } = require('apollo-server-express');
 const path = require('path');
+=======
+const{ApolloServer, gql} = require('apollo-server-express');
+//const {typeDefs, resolvers} = require('./schema');
+
+>>>>>>> 50cc4efeadc8a77241b1ad6775080d5124cc2d05
 
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
