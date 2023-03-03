@@ -8,20 +8,21 @@ const Auth = () => {
     <div className="auth"> 
     
              <div className="logo__container"> 
-            <h1 className="welcome">Welcome to Jetsettr</h1>
-                <img className="logo" src={Logo} alt="jetsettr-logo" />
-                {/* <div className="JetSETTR"> */}
-               
+             <div className="welcome"> 
+             <p className="welcomeMessage">Welcome!</p>
+             </div>
+                <img className="mainlogo" src={Logo} alt="jetsettr-logo" />
             </div> 
-        {/* </div> */}
         <LogIn/>
+    
         </div>
     );
 };
 
 function LogIn() {
     return (
-        <><form className="loginForm">
+        <><div className="login">
+        <form className="loginForm">
                 <h1>Log In</h1>
             <input
                 type="text"
@@ -41,7 +42,7 @@ function LogIn() {
            <div className="signUpBox">
             <p>Don't have an account?</p>
 <a href="/SignUp">Sign Up</a>
-</div></>
+</div></div></>
     );
 };
 

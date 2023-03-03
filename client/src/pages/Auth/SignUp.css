@@ -16,6 +16,10 @@ color: white;
 text-decoration: none;
 }
 
+.backBtn:hover {
+    border-radius: 600% 0px 0px 600%;
+}
+
 .signup__container {
     display: flex;
     flex-direction: column;

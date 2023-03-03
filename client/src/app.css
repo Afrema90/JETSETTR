@@ -40,11 +40,35 @@ body {
     border-radius:10px;
     padding: 20px; */
     margin: auto;
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-    align-items:center; 
     height: 100vh;
+    overflow-x: hidden;
+}
+
+header {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  background-color: rgb(190, 97, 21);
+  height: 120px;
+  z-index: 5;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 2em;
+  width: 100vw;
+  background-color: rgb(190, 97, 21);
+  height: 120px;
+  z-index: 5;
+  color: white;
+}
+
+.bannerLogo {
+  border-radius: 50%;
+  scale: 95%;
 }
 
 .blur{
