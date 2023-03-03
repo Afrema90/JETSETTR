@@ -34,7 +34,7 @@ body {
   }
   
 .App{
-    background-color: rgb(190, 97, 21);
+    background-color: transparent;
     /* color:var(--hrColor);
     box-shadow:var(--profileshadow);
     border-radius:10px;
