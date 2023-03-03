@@ -1,16 +1,25 @@
-import "App.css";
-import Auth from "./pages/Auth";
-import Home from "./pages/Home";
-import Profile from "./pages/Profile";
+import React from 'react';
+import "./app.css";
+import Auth from "./pages/Auth/Auth.jsx";
+import "./pages/Auth/Auth.css"
+// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+// import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
+
+import Home from "./pages/Home/Home.jsx";
+import "./pages/Home/Home.css";
+import Profile from "./pages/Profile/Profile";
+
+
+// const client = new ApolloClient({
+//   uri: '/graphql',
+//   cache: new InMemoryCache(),
+// });
+
 function App() {
   return (
     <div className="App">
-        <div className="blur" />=style{{ top: "0px", right: "0px" }}{">"}</div>
-        <div className="blur" style={{ top: "0px", left: "0px" }}></div>
-          {/* <Home /> */ }
-          <Profile />
-        {/* <Auth /> */ }
-    </div >
+    <Auth /> 
+    </div>
   );
 }
 
