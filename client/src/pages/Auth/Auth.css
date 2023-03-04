@@ -120,7 +120,7 @@ color: gold;
 transition: all 1s;
 }
 
-@media(max-width: 900px) {
+@media(max-width: 850px) {
     .auth {
         flex-direction: column;
         align-content: center;
@@ -128,7 +128,7 @@ transition: all 1s;
     }
 }
 
-@media(max-width: 600px) {
+@media(max-width: 700px) {
     .auth {
         flex-direction: column;
         margin: auto;
