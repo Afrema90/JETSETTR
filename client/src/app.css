@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
 :root {
     --blue:var(--blue);
     --red:var(--red);
@@ -11,59 +17,67 @@
     --photo:var(--buttonbg);
     --video:#ff0000;
     --location:#00ff00;
-    --shedule:#0000ff;
+    --schedule:#0000ff;
 }
 
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+  
 .App{
-    background-color:var(--cardColor);
-    color:var(--hrColor);
+    background-color: transparent;
+    /* color:var(--hrColor);
     box-shadow:var(--profileshadow);
     border-radius:10px;
-    padding:10px;
-    margin:10px;
-    width:100%;
-    height:100%;
+    padding: 20px; */
+    margin: auto;
     display:flex;
     flex-direction:column;
     justify-content:space-between;
-    align-items:center;
+    align-items:center; 
+    height: 100vh;
 }
 
 .blur{
-    filter:blur(5px);
-    position: obsolute;
+    /* filter:blur(5px);
+    position: absolute;
     width:22rem;
     height:22rem;
-    border-radius:50px;
-    background-color:var(--cardColor);
+    border-radius:20px;
+    background-color:var(--cardColor); */
 }
 
 .button{
-    background-color:var(--buttonbg);
+    /* background-color:var(--buttonbg);
     color:white;
     border-radius:10px;
     padding:10px;
     margin:10px;
-    width:100%;
-    height:100%;
     display:flex;
     flex-direction:column;
     justify-content:space-between;
-    align-items:center;
+    align-items:center; */
 }
 
 .button:hover{
-    background-color:var(--buttonbg);
+    /* background-color:var(--buttonbg);
     color:white;
     border-radius:10px;
     padding:10px;
     margin:10px;
-    width:100%;
-    height:100%;
     display:flex;
     flex-direction:column;
     justify-content:space-between;
-    align-items:center;
+    align-items:center; */
 }
 
 ::-webkit-scrollbar {
