@@ -3,7 +3,7 @@ import "./SignUp.css";
 
 function SignUp() {
   return (
-<><div className="backBtn"><a className="backLink" href="/">Go Back</a></div>
+<><a className="backBtn" href="/">Go Back</a>
 <form className="signup__container">
       <div className="signupTitle">
         <p>Want to connect with travelers like yourself?</p>
@@ -51,7 +51,7 @@ function SignUp() {
       />
 
       <span className="ahaa" style={{ fontSize: "22px" }}>Already have an account?</span>
-      <button id="signUpBtn" className="signUpBtn">Sign Me Up</button>
+      <button className="signup__button">Sign Me Up</button>
     </form></>
   );
 }
