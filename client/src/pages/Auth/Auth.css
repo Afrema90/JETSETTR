@@ -1,57 +1,92 @@
 .auth {
     text-align: center;
     background-color: ;
+    margin: auto;
+    padding: 5em;
+    display: flex;
+    /* flex-direction: row; */
+    vertical-align: center;
+    justify-content: space-around;
 }
 
 .logo__container {
 position: relative;
-display: flex;
+align-content: center;
 }
 
-.logo{
+.mainlogo{
+    position: relative;
     border-radius: 300% 0px 300% 300%;
-    z-index: 2;
-    width: 400px;
-    height: 400px;
-    margin: 1.5em;
+    scale: 70%;
+    margin: auto;
 }
 
 .welcome {
     position: absolute;
-    right: 400px;
-    top: 30px;
+    left: 150px;
+    top: 100px;
     display: flex;
     flex-direction: column;
-    padding: 1em;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
-transform: rotateZ(-35deg);
 background-color: rgb(190, 97, 21);
 /* box-shadow: 0px 0px 20px 20px rgb(255, 183, 0); */
 color: white;
+animation: shine 3s ease-in-out 2s 1 normal forwards;
 }
 
-.welcome:hover {
-    box-shadow: 0px 0px 200px 200px rgb(255, 183, 0);
-    transition: all 3s ;
+@keyframes shine {
+    0% {
+        box-shadow: 0px 0px 0px 0px rgb(255, 183, 0);
+    }
+
+    100% {
+        box-shadow: 0px 0px 100px 100px rgb(255, 183, 0);
+        transform: rotateZ(-40deg);
+        left: 20px;
+        top: 40px;
+    }
 }
 
-.infoInput {
+
+
+.welcomeMessage {
+    opacity: 0;
+    margin-top: 1.5em;
+    font-size: 1.5em;
+    font-family: inherit;
+}
+
+
+.login {
+    display: flex;
+    flex-direction: column;
+}
+
+ /* .infoInput {
     margin: .25em;
-    padding: 5px;
-    width: 15em;
-    background: transparent;
-}
+    padding: 18px;
+    border-radius: 20px;
+    background-color: white;
+    color: black;
+
+} */
+
+.infoInput:focus {
+    background-color: black;
+    color: white;
+} 
 
 .loginForm {
     display: flex;
     flex-direction: column;
     align-items: center;
     color: white;
-    margin-top: -25px auto;
 }
 
 .login__button {
-    margin: .5em;
+    margin: .75em;
     padding: .75em;
     border-radius: 10px;
     font-weight: boldest;
@@ -60,32 +95,98 @@ color: white;
 }
 
 .login__button:hover {
-    background-color: rgb(0, 15, 88);
+    background-color: rgb(190, 97, 21);
+   box-shadow: 0px 0px 5px 5px rgba(138, 158, 255, 0.8);
     color: white;
-    transition: all 1s;
+    transition: all  .5s;
 }
 
 
 .signUpBox {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    background-color: rgb(0, 15, 88);
+    flex-direction: column;
+    justify-content: center;
     border-radius: 20px;
-    padding: .5em;
     color: white;
     font-weight: boldest;
-    font-size: 1.25em;
-    margin: auto 1em;
+    font-size: auto;
+    margin: 2em auto;
 }
 
 .signUpBox a {
     text-decoration: none;
     color: white;
+    z-index: 0;
 }
 
 .signUpBox a:hover {
-    color:  rgb(190, 85, 0);
-font-weight: boldest;    
+    text-shadow: 3px 3px 20px rgb(255, 183, 0);
+font-weight: boldest;  
+scale: 115%;  
+z-index: 3;
+color: gold;
 transition: all 1s;
+}
+
+@media(max-width: 850px) {
+    .auth {
+        flex-direction: column;
+        align-content: center;
+        margin: auto;
+    }
+    .logo__container {
+        margin: auto;
+        scale: 85%;
+    }
+}
+
+@media(max-width: 700px) {
+    .auth {
+        flex-direction: column;
+        margin: auto;
+        align-items: center;
+        align-content: center;
+        text-align: center;
+        padding: 0;
+    }
+
+    .logo__container {
+        margin: 1em;
+        scale: 60%;
+    }
+
+}
+
+@media(max-width: 400px) {
+
+    .auth {
+        padding: 0em;
+        margin: auto;
+    }
+
+    .logo__container {
+scale: 50%;  max-height: 300px;  }
+
+
+
+.welcome {
+    scale: 90%;
+}
+
+}
+
+@media(max-width: 300px) {
+
+.logo__container{
+    display: none;
+}
+
+    .welcome{
+       display: none;
+    }
+.login {
+    vertical-align: center;
+    margin: 10em auto;
+}
+
 }
