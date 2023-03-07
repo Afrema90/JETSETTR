@@ -103,6 +103,10 @@ footer {
     height:22rem;
     border-radius:20px;
     background-color:var(--cardColor); */
+    height:14rem;
+    border-radius:50px;
+    background: #A6DDF0;
+    filter: blur(72px)
 }
 
 .button{
