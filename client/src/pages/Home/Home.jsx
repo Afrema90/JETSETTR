@@ -21,7 +21,7 @@ function Home() {
     };
 
     return (
-        <div>
+        <div className='Home'>
             <input 
                 type="file" 
                 onChange={(event) => {

@@ -14,16 +14,16 @@ import SignUp from "./pages/Auth/SignUp.jsx";
 import "./pages/Home/Home.css";
 
 const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Auth/>,
-  },
+  // {
+  //   path: "/",
+  //   element: <Auth/>,
+  // },
   {
     path: "/Home",
     element: <Home/>,
   },
   {
-    path: "/Profile",
+    path: "/",
     element: <Profile/>,
   },
   {

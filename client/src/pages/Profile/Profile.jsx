@@ -10,6 +10,9 @@ const Profile = () => {
             <div className="profile__container">
                 <div className="profile__left">
                     {/* <ProfileLeft/> */}
+                    <searchLogo/>
+                    <cardInfo/>
+                    <cardFollowers/>
                 </div>
                 <div className="profile__middle">
                     {/* <ProfileCard/> */}
