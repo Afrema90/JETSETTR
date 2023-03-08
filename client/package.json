@@ -11,6 +11,7 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^13.5.0",
+<<<<<<< HEAD
     "axios": "^1.3.4",
     "cloudinary-react": "^1.8.1",
     "graphql": "^15.4.0",
@@ -19,6 +20,13 @@
     "react-dom": "^17.0.2",
     "react-router-dom": "^6.2.1",
     "react-scripts": "^2.1.3",
+=======
+    "graphql": "^15.4.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^6.8.2",
+    "react-scripts": "5.0.1",
+>>>>>>> e66e947985222645f6e904bf4e9533ce0e6d09fb
     "web-vitals": "^2.1.4"
   },
   "scripts": {
