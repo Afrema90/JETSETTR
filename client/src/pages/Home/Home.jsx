@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
-import Axios from 'axios'
-import {Image} from 'cloudinary-react'
+import Axios from 'axios';
+import {Image} from 'cloudinary-react';
 // import PostSide from '../../components/PostSide/PostSide';
 // import ProfileSide from '../../components/Profileside/Profileside';
 // import RightSide from '../../components/RightSide/RightSide';
 import './Home.css';
 
-function App() {
+function Home() {
 
     const [imageSelected, setImageSelected] = useState("");
 
     const uploadImage = () => {
         const formData = new FormData()
-        formData.append("file", imageSelected);
+        formData.append("file", imageSelected)
         formData.append("upload_preset", "jtj4c4ac")
 
         Axios.post("https://api.cloudinary.com/v1_1/dze7hholo/image/upload", formData).then((response) => {
@@ -55,4 +55,4 @@ function App() {
 // }
 // // export default Home
 
-export default App
+export default Home;
