@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
-import Axios from 'axios';
-import { Image } from 'cloudinary-react';
-import './Home.css';
+import React from 'react';
+// import PostSide from '../../components/PostSide/PostSide';
+// import ProfileSide from '../../components/Profileside/Profileside';
+// import RightSide from '../../components/RightSide/RightSide';
+import './Home.css'
 
 const Home = () => {
   const [posts, setPosts] = useState([
@@ -97,6 +98,10 @@ const Home = () => {
   const handleCommentChange = (event) => {
     setNewComment(event.target.value);
   };
+    const uploadImage = () => {
+        const formData = new FormData()
+        formData.append("file", imageSelected)
+        formData.append("upload_preset", "jtj4c4ac")
 
   const handleCommentSubmit = (postId) => {
     const updatedPosts = posts.map((post) => {
@@ -149,6 +154,30 @@ const Home = () => {
               />
               <button onClick={() => handleCommentSubmit(post.id)}>Submit</button>
             </div>
+
+    return (
+        <div className='Home'>
+            <input 
+                type="file" 
+                onChange={(event) => {
+                    setImageSelected(event.target.files);
+                }}
+  return (
+        type="file"
+        multiple
+        onChange={(event) => {
+          setImagesSelected(event.target.files);
+        }}
+      />
+      <button onClick={uploadImages}>Upload Images</button>
+      {imagesSelected.length > 0 &&
+        Array.from(imagesSelected).map((image, index) => (
+          <div key={index}>
+            <Image
+              style={{ width: 200 }}
+              cloudName="dze7hholo"
+              publicId="{image.name}"
+            />
           </div>
         </div>
       ))}
@@ -157,3 +186,21 @@ const Home = () => {
 };
 
 export default Home;
+const Home = () => {
+    return (
+        <div className="home">
+            <div className="home__container">
+                <div className="home__left">
+                    {/* <ProfileSide/> */}
+                </div>
+                <div className="home__middle">
+                    {/* <PostSide/> */}
+                </div>
+                <div className="home__right">
+                    {/* <RightSide/> */}
+                </div>
+            </div>
+        </div>
+    )
+}
+export default Home

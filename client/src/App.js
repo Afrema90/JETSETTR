@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {createBrowserRouter, RouterProvider, Routes, Route} from 'react-router-dom';
+import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 
 //Import each JSX component for the routes + necessary assets
 // import Logo from "./images/Jetsettr.png";
@@ -23,7 +23,7 @@ const router = createBrowserRouter([
     element: <Home/>,
   },
   {
-    path: "/",
+    path: "/Profile",
     element: <Profile/>,
   },
   {
