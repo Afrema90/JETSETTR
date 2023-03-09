@@ -34,7 +34,7 @@ const Home = () => {
     },
     {
       id: 3,
-      username: "MikeTyson",
+      username: "SelenaGomez",
       imageUrl: "https://images.unsplash.com/photo-1521747116042-5a810fda9664",
       caption: "The Golden Gate Bridge!!",
       likes: 654,
