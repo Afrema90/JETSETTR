@@ -107,7 +107,7 @@ const Home = () => {
             ...post.comments,
             {
               id: post.comments.length + 1,
-              username: "johndoe",
+              username: "Raied",
               text: newComment,
             },
           ],
