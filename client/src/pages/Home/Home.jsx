@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import Axios from 'axios';
-import { Image } from 'cloudinary-react';
 import './Home.css';
 
 const Home = () => {
@@ -23,6 +21,7 @@ const Home = () => {
           text: "Thanks!",
         },
       ],
+      
     },
     {
       id: 2,
@@ -46,7 +45,16 @@ const Home = () => {
       imageUrl: "https://images.unsplash.com/photo-1612278675615-7b093b07772d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2069&q=80",
       caption: "Day 1 in Greece",
       likes: 32,
-      comments: [],
+      comments: [{
+          id: 1,
+          username: "JakePaul",
+          text: "I live there",
+        },
+        {
+          id: 2,
+          username: "MikeTyson",
+          text: "Wow, really?!",
+        },],
     },
     {
       id: 5,
@@ -80,7 +88,71 @@ const Home = () => {
       likes: 124,
       comments: [],
     },
+    
   ]);
+
+const UploadImage = () => {
+  const [image, setImage] = useState(null);
+  const [caption, setCaption] = useState("");
+
+  const handleImageUpload = (event) => {
+    const selectedImage = event.target.files[0];
+    setImage(selectedImage);
+  };
+
+  const handleCaptionChange = (event) => {
+    setCaption(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (image && caption) {
+      const newPost = {
+        id: posts.length + 1,
+        username: "Your Username",
+        imageUrl: URL.createObjectURL(image),
+        caption,
+        likes: 0,
+        comments: [],
+      };
+      setPosts([newPost, ...posts]);
+      setImage(null);
+      setCaption("");
+    }
+  };
+
+  return (
+    <div className="upload-container">
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="image-upload" className="upload-label">
+          <i className="fas fa-cloud-upload-alt"></i> +
+        </label>
+        <input
+          type="file"
+          id="image-upload"
+          className="file-input"
+          onChange={handleImageUpload}
+        />
+        <input
+          type="text"
+          placeholder="Write a caption..."
+          value={caption}
+          onChange={handleCaptionChange}
+        />
+        <button type="submit">Post</button>
+      </form>
+      {image && (
+        <img
+          src={URL.createObjectURL(image)}
+          alt="Uploaded Image"
+          className="uploaded-image"
+        />
+      )}
+    </div>
+  );
+};
+
+
 
   const [newComment, setNewComment] = useState("");
 
@@ -152,8 +224,9 @@ const Home = () => {
           </div>
         </div>
       ))}
+      <UploadImage />
     </div>
   );
-};
+  }
 
-export default Home;
+  export default Home;
