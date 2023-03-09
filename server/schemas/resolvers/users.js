@@ -49,7 +49,7 @@ module.exports = {
   //check if entered password equals encrypted password
         if (user && (await bcrypt.compare(password, user.password))) {
             //create new token
-            const token = jwt.sign({ user_id: newUser._id, email }, "UNSAFE_STRING", {
+            const token = jwt.sign({ user_id: user._id, email }, "UNSAFE_STRING", {
                 expiresIn: "2h",
               });
 
@@ -67,10 +67,10 @@ throw new ApolloError('Incorrect Password', 'INCORRECT_PASSWORD');
       
 
         //if user doesnt exist return error
-  },
+  }
+},
 
-  // Query: { 
-  //   user: (_, {ID}) = User.findById(ID) 
-  // }
-}
+  Query: { 
+    user: (_, {ID}) => User.findById(ID) 
+  }
 };

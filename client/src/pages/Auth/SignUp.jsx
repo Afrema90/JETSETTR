@@ -50,7 +50,6 @@ function SignUp() {
         name="password2"
       />
 
-      <span className="ahaa" style={{ fontSize: "22px" }}>Already have an account?</span>
       <button id="signUpBtn" className="signUpBtn">Sign Me Up</button>
     </form></>
   );
