@@ -68,7 +68,7 @@
 
 .comments {
     font-size: 1rem;
-    color: #999;
+    color: rgb(0, 0, 0);
     margin-bottom: 10px;
 }
 
@@ -85,7 +85,7 @@
 }
 
 .comment .text {
-    color: #555;
+    color: rgb(0, 0, 0);
 }
 
 .comment-form {
