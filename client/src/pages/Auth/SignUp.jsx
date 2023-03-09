@@ -10,16 +10,19 @@ function SignUp(props) {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
+    try {
     const mutationResponse = await addUser({
       variables: {
         email: formState.email,
         password: formState.password,
-        
-      },
-    });
+      }
+    })
     const token = mutationResponse.data.addUser.token;
     Auth.login(token);
-  };
+  } catch (error) {
+    console.log(error);
+  }
+};
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -31,7 +34,8 @@ function SignUp(props) {
   };
 
   return (
-<><div className="backBtn"><a className="backLink" href="/">Go Back</a></div>
+<>
+<div className="backBtn"><a className="backLink" href="/">Go Back</a></div>
 <form className="signup__container" onSubmit={handleFormSubmit}>
       <div className="signupTitle">
         <p>Want to connect with travelers like yourself?</p>
