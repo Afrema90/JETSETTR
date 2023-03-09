@@ -227,6 +227,7 @@ const UploadImage = () => {
       <UploadImage />
     </div>
   );
+  
   }
 
   export default Home;
