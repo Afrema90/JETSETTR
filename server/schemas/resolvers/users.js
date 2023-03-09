@@ -6,7 +6,7 @@ const jwt = require("jsonwebtoken");
 module.exports = {
 
   Mutation: {
-    async registerUser(_, { register: { username, email, password } }) {
+    async registerUser(_, { registerInput: { username, email, password } }) {
       //see if old user exists
       const oldUser = await User.findOne({ email });
 
@@ -42,7 +42,7 @@ module.exports = {
       }
     },
 
-    async loginUser(_, { Login: {email, password } }) {
+    async loginUser(_, { loginInput: {email, password } }) {
         //see if user exists with email
         const user = await User.findOne({ email });
 

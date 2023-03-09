@@ -9,13 +9,14 @@ type User {
     token: String
 }
 
-input Register {
+input RegisterInput {
     username: String
     email: String
     password: String
+    confirmPassword: String
 }
 
-input Login {
+input LoginInput {
     email: String
     password: String
 }
@@ -25,8 +26,8 @@ type Query {
 }
 
 type Mutation {
-    registerUser(register: Register): User
-    loginUser(login: Login ): User
+    registerUser(registerInput: RegisterInput): User
+    loginUser(loginInput: LoginInput ): User
 
 }
 
