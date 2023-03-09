@@ -3,65 +3,117 @@ import Axios from 'axios';
 import { Image } from 'cloudinary-react';
 import './Home.css';
 
-function Home() {
-  const [imagesSelected, setImagesSelected] = useState([]);
+const Home = () => {
+  const [posts, setPosts] = useState([
+    {
+      id: 1,
+      username: "raiedab",
+      imageUrl: "https://unsplash.com/photos/O453M2Liufs",
+      caption: "Exploring the mountains",
+      likes: 456,
+      comments: [
+        {
+          id: 1,
+          username: "KylieJenner",
+          text: "Awesome picture!",
+        },
+        {
+          id: 2,
+          username: "Cristiano",
+          text: "Thanks!",
+        },
+      ],
+    },
+    {
+      id: 2,
+      username: "Beyonce",
+      imageUrl: "https://unsplash.com/photos/uq2E2V4LhCY",
+      caption: "Sunset at the beach",
+      likes: 123,
+      comments: [],
+    },
+    {
+      id: 3,
+      username: "johndoe",
+      imageUrl: "https://images.unsplash.com/photo-1521747116042-5a810fda9664",
+      caption: "The Golden Gate Bridge!!",
+      likes: 789,
+      comments: [],
+    },
+  ]);
 
-  const uploadImages = () => {
-    const formData = new FormData();
-    for (let i = 0; i < imagesSelected.length; i++) {
-      formData.append('file', imagesSelected[i]);
-      formData.append('upload_preset', 'jtj4c4ac');
-      Axios.post(
-        'https://api.cloudinary.com/v1_1/dze7hholo/image/upload',
-        formData
-      ).then((response) => {
-        console.log(response);
-      });
-    }
+  const [newComment, setNewComment] = useState("");
+
+  const handleLikeClick = (postId) => {
+    const updatedPosts = posts.map((post) => {
+      if (post.id === postId) {
+        return { ...post, likes: post.likes + 1 };
+      }
+      return post;
+    });
+    setPosts(updatedPosts);
   };
 
-<<<<<<< HEAD
-    const uploadImage = () => {
-        const formData = new FormData()
-        formData.append("file", imageSelected)
-        formData.append("upload_preset", "jtj4c4ac")
+  const handleCommentChange = (event) => {
+    setNewComment(event.target.value);
+  };
 
-        Axios.post("https://api.cloudinary.com/v1_1/dze7hholo/image/upload", formData).then((response) => {
-            console.log(response);
-        });
-    };
+  const handleCommentSubmit = (postId) => {
+    const updatedPosts = posts.map((post) => {
+      if (post.id === postId) {
+        return {
+          ...post,
+          comments: [
+            ...post.comments,
+            {
+              id: post.comments.length + 1,
+              username: "johndoe",
+              text: newComment,
+            },
+          ],
+        };
+      }
+      return post;
+    });
+    setPosts(updatedPosts);
+    setNewComment("");
+  };
 
-    return (
-        <div className='Home'>
-            <input 
-                type="file" 
-                onChange={(event) => {
-                    setImageSelected(event.target.files);
-                }}
-=======
   return (
-    <div>
-      <input
-        type="file"
-        multiple
-        onChange={(event) => {
-          setImagesSelected(event.target.files);
-        }}
-      />
-      <button onClick={uploadImages}>Upload Images</button>
-      {imagesSelected.length > 0 &&
-        Array.from(imagesSelected).map((image, index) => (
-          <div key={index}>
-            <Image
-              style={{ width: 200 }}
-              cloudName="dze7hholo"
-              publicId="{image.name}"
->>>>>>> be87ae4934d55f962343696f20e8b9bae2604faf
-            />
+    <div className="feed">
+      {posts.map((post) => (
+        <div key={post.id} className="post">
+          <div className="post-header">
+            <div className="username">{post.username}</div>
           </div>
-        ))}
+          <div onClick={() => handleLikeClick(post.id)}>
+            <img src={post.imageUrl} alt="post" />
+          </div>
+          <div className="post-footer">
+            <div className="likes">{post.likes} likes</div>
+            <div className="caption">{post.caption}</div>
+            <div className="comments">
+              {post.comments.map((comment) => (
+                <div key={comment.id} className="comment">
+                  <span className="username">{comment.username}</span>
+                  <span className="text">{comment.text}</span>
+                </div>
+              ))}
+            </div>
+            <div className="comment-form">
+              <input
+                type="text"
+                placeholder="Add a comment..."
+                value={newComment}
+                onChange={handleCommentChange}
+              />
+              <button onClick={() => handleCommentSubmit(post.id)}>Submit</button>
+            </div>
+          </div>
+        </div>
+      ))}
     </div>
   );
-}
+};
 
 export default Home;
