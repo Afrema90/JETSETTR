@@ -1,8 +1,9 @@
-const{AuthenticationError} = Require('apollo-server-express');
-const {signToken} = require('../utils/auth');
-const{User,} = require('../models');
+const{ AuthenticationError } = Require('apollo-server-express'); 
+const { signToken } = require('../utils/auth');
+const{ User } = require('../models');
 
 const resolvers = {
+
     Query: {
         profiles: async () => {
             return Profile.find();
@@ -17,6 +18,7 @@ const resolvers = {
             throw new AuthenticationError('You need to be logged in!');
         },
     },
+
     Mutation: {
         addUser: async (parent, args) => {
             const user = await User.create(args);
@@ -36,6 +38,7 @@ const resolvers = {
             const token = signToken(user);
             return {token, user};
         },
+        
         saveProfile: async (parent, {profileData}, context) => {
             if (context.user) {
                 const profile = await Profile.findOneAndUpdate(
