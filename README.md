@@ -1,6 +1,12 @@
 # JETSETTR
 
+<<<<<<< HEAD
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg) ![badge]()
+
+  # Jetsettr
+=======
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+>>>>>>> 83726cbb2ca1175b1aacf4263d2c153cb9a3223a
 
   ## Table of Contents
   - [Description](#description)
@@ -42,7 +48,11 @@ Navigate to the page and use it like any other website!
 
 ## Usage
 
+<<<<<<< HEAD
+See above
+=======
 Here is a demonstration of the homepage functionality: https://connvirtfsfpt-a476009.slack.com/files/U04123LBCPQ/F04T3QMJ877/video_clip__2023-03-09_11_20_33_.mov
+>>>>>>> 83726cbb2ca1175b1aacf4263d2c153cb9a3223a
 
 ## Credits
 
@@ -71,4 +81,8 @@ Navigate to the repository and clone to make your own customizations!
 
 ## Questions
 
+<<<<<<< HEAD
 If you have any questions about this application, please contact @Sephadeus, @Afrema90, @DavidParker42, @RaiedAb, and @RashadSr on GitHub at  or by email at Please contact us at our profiles on GitHub!.
+=======
+If you have any questions about this application, please contact @Sephadeus, @Afrema90, @DavidParker42, @RaiedAb, and @RashadSr on GitHub at  or by email at Please contact us at our profiles on GitHub!.
+>>>>>>> 83726cbb2ca1175b1aacf4263d2c153cb9a3223a

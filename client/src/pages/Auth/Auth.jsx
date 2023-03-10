@@ -1,15 +1,18 @@
-import React from 'react';
 import "./Auth.css";
 import Logo from "../../images/Jetsettr.png";
+ import React, { useState } from "react";
+// import { AuthContext } from "../../context/authContext";
+// import { gql } from "graphql-tag";
+import { useMutation } from '@apollo/client';
+import { LOGIN } from '../../utils/mutations';
+import Auth from '../../utils/auth';
 
-
-const Auth = () => {
+const AuthorizationMain = () => {
     return (
     <div className="auth"> 
     
              <div className="logo__container"> 
              <div className="welcome"> 
-             <p className="welcomeMessage">Welcome!</p>
              </div>
                 <img className="mainlogo" src={Logo} alt="jetsettr-logo" />
             </div> 
@@ -19,25 +22,83 @@ const Auth = () => {
     );
 };
 
-function LogIn() {
+function LogIn(props) {
+ 
+
+    const [formState, setFormState] = useState({ email: '', password: '' });
+    const [login, { error }] = useMutation(LOGIN);
+  
+    const handleFormSubmit = async (event) => {
+      event.preventDefault();
+      try {
+        const mutationResponse = await login({
+          variables: { email: formState.email, password: formState.password },
+        });
+        const token = mutationResponse.data.login.token;
+        Auth.login(token);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+  
+    const handleChange = (event) => {
+      const { name, value } = event.target;
+      setFormState({
+        ...formState,
+        [name]: value,
+      });
+    };
+  
+
+  // const context = useContext(AuthContext);
+  // const navigate = useNavigate();
+  // const [errors, setErrors] = useState([]);
+
+  // function loginUserCallback() {
+  //   console.log("Callback hit");
+  //   loginUser();
+  // }
+
+  // const { onChange, onSubmit, values } = useForm(loginUserCallback, {
+  //   email: "",
+  //   password: "",
+  // });
+
+  // const [loginUser] = useMutation(LOGIN_USER, {
+  //   update(_, { data: { loginUser: userData } }) {
+  //     context.login(userData);
+  //     document.location.replace("/");
+  //   },
+  //   onError({ graphQLErrors }) {
+  //     setErrors(graphQLErrors);
+  //   },
+  //   variables: { loginInput: values },
+  // });
+
     return (
         <><div className="login">
-        <form className="loginForm">
+        <form className="loginForm" onSubmit={handleFormSubmit}>
                 <h1>Log In</h1>
             <input
-                type="text"
-                placeholder="Username" 
+                type="email"
+                placeholder="Email" 
             className="infoInput"
-            name="username"/>
+            name="email"
+            onChange={handleChange}/>
                 <input
                     type="password"
                     className='infoInput'
                     placeholder="Password"
-                    name="password"/>
-       
+                    name="password"
+                    onChange={handleChange}/>
+       {error ? (
+          <div>
+            <p className="error-text">The provided credentials are incorrect</p>
+          </div>
+        ) : null}
                 <span style={{ fontSize: "14px" }}>
                     Don't forget to login</span>
-           <button className="login__button">Login</button>
+           <button className="login__button" type="submit">Login</button>
              </form>
            <div className="signUpBox">
             <p>Don't have an account?</p>
@@ -73,7 +134,7 @@ function LogIn() {
 //     );
 // }
 
-export default Auth;
+export default AuthorizationMain;
 
 
 

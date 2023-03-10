@@ -1,6 +1,6 @@
 .auth {
     text-align: center;
-    background-color: ;
+    background-color:  rgb(1, 11, 57);
     margin: auto;
     padding: 5em;
     display: flex;
@@ -51,12 +51,6 @@ animation: shine 3s ease-in-out 2s 1 normal forwards;
 
 
 
-.welcomeMessage {
-    opacity: 0;
-    margin-top: 1.5em;
-    font-size: 1.5em;
-    font-family: inherit;
-}
 
 
 .login {
