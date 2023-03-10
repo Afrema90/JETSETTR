@@ -1,5 +1,6 @@
-import React, { useState } from "react";
- import "./Home.css";
+import React, { useState } from 'react';
+import './Home.css';
+
 const Home = () => {
   const [posts, setPosts] = useState([
     {
@@ -86,10 +87,13 @@ const Home = () => {
       likes: 124,
       comments: [],
     },
+    
   ]);
+
 const UploadImage = () => {
   const [image, setImage] = useState(null);
-  const [caption, setCaption] = useState(“”);
+  const [caption, setCaption] = useState("");
+
   const handleImageUpload = (event) => {
     const selectedImage = event.target.files[0];
     setImage(selectedImage);
@@ -143,7 +147,11 @@ const UploadImage = () => {
     </div>
   );
 };
-  const [newComment, setNewComment] = useState(“”);
+
+
+
+  const [newComment, setNewComment] = useState("");
+
   const handleLikeClick = (postId) => {
     const updatedPosts = posts.map((post) => {
       if (post.id === postId) {
@@ -156,6 +164,7 @@ const UploadImage = () => {
   const handleCommentChange = (event) => {
     setNewComment(event.target.value);
   };
+
   const handleCommentSubmit = (postId) => {
     const updatedPosts = posts.map((post) => {
       if (post.id === postId) {
