@@ -1,4 +1,10 @@
-.Home{
+@media only screen and (max-width: 768px) {
+    .Home {
+        flex-direction: column;
+    }
+}
+
+.Home {
     background-color: #f5f5f5;
     height: 100vh;
     width: 100vw;
@@ -8,3 +14,152 @@
     justify-content: center;
     font-family: 'Roboto', sans-serif;
 }
+
+.feed {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.post,
+.uploaded-image {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    margin: 20px 0;
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.post:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.2);
+}
+
+.post img {
+    width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.username {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.post-footer {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.likes {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.caption {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.comments {
+    font-size: 1rem;
+    color: rgb(0, 0, 0);
+    margin-bottom: 10px;
+}
+
+.comment {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.comment .username {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.comment .text {
+    color: rgb(0, 0, 0);
+}
+
+.comment-form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.comment-form input {
+    flex: 1;
+    border: none;
+    background-color: #eee;
+    padding: 10px;
+    border-radius: 20px;
+    margin-right: 10px;
+}
+
+.comment-form button {
+    border: none;
+    background-color: rgb(190, 97, 21);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.comment-form button:hover {
+    background-color: rgb(249, 160, 86);
+}
+
+.upload-container {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: none;
+    background-color: #001a37;
+    color: #fff;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    width: 70px;
+    height: 70px;
+}
+
+.upload-container:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+.upload-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    cursor: pointer;
+    z-index: -1;
+}
+
+
+
