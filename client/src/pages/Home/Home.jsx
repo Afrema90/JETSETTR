@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './Home.css';
 
-
 const Home = () => {
   const [posts, setPosts] = useState([
     {
@@ -90,12 +89,11 @@ const Home = () => {
       comments: [],
     },
     
-  ])};
+  ]);
 
 const UploadImage = () => {
   const [image, setImage] = useState(null);
   const [caption, setCaption] = useState("");
-}
 
   const handleImageUpload = (event) => {
     const selectedImage = event.target.files[0];
@@ -152,6 +150,8 @@ const UploadImage = () => {
       )}
     </div>
   );
+};
+
 
 
   const [newComment, setNewComment] = useState("");
@@ -169,11 +169,6 @@ const UploadImage = () => {
   const handleCommentChange = (event) => {
     setNewComment(event.target.value);
   };
-    const uploadImage = () => {
-        const formData = new FormData()
-        formData.append("file", imageSelected)
-        formData.append("upload_preset", "jtj4c4ac");
-    }
 
   const handleCommentSubmit = (postId) => {
     const updatedPosts = posts.map((post) => {
@@ -226,30 +221,6 @@ const UploadImage = () => {
               />
               <button onClick={() => handleCommentSubmit(post.id)}>Submit</button>
             </div>
-
-    return (
-        <div className='Home'>
-            <input 
-                type="file" 
-                onChange={(event) => {
-                    setImageSelected(event.target.files);
-                }}
-  return (
-        type="file"
-        multiple
-        onChange={(event) => {
-          setImagesSelected(event.target.files);
-        }}
-      />
-      <button onClick={uploadImages}>Upload Images</button>
-      {imagesSelected.length > 0 &&
-        Array.from(imagesSelected).map((image, index) => (
-          <div key={index}>
-            <Image
-              style={{ width: 200 }}
-              cloudName="dze7hholo"
-              publicId="{image.name}"
-            />
           </div>
         </div>
       ))}
