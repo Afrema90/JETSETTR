@@ -61,10 +61,10 @@ function App() {
                 path="/SignUp" 
                 element={<SignUp />} 
               />
-              <Route 
+              {/* <Route 
                 path="/Profile" 
                 element={<Profile />} 
-              />
+              /> */}
               <Route
                 path="*" 
                 element={<NotFound />} 
