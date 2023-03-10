@@ -111,7 +111,7 @@ const UploadImage = () => {
     if (image && caption) {
       const newPost = {
         id: posts.length + 1,
-        username: "Your Username",
+        username: "Raied",
         imageUrl: URL.createObjectURL(image),
         caption,
         likes: 0,
@@ -137,7 +137,7 @@ const UploadImage = () => {
         />
         <input
           type="text"
-          placeholder="Write a caption..."
+          placeholder="Caption"
           value={caption}
           onChange={handleCaptionChange}
         />
@@ -256,6 +256,7 @@ const UploadImage = () => {
       <UploadImage />
     </div>
   );
+  
   
   }
 
