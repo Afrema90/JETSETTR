@@ -42,7 +42,7 @@ Navigate to the page and use it like any other website!
 
 ## Usage
 
-See above
+Here is a demonstration of the homepage functionality: https://connvirtfsfpt-a476009.slack.com/files/U04123LBCPQ/F04T3QMJ877/video_clip__2023-03-09_11_20_33_.mov
 
 ## Credits
 
