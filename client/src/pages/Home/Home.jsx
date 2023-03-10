@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
 import './Home.css';
-import React from 'react';
-// import PostSide from '../../components/PostSide/PostSide';
-// import ProfileSide from '../../components/Profileside/Profileside';
-// import RightSide from '../../components/RightSide/RightSide';
-import './Home.css'
+
 
 const Home = () => {
   const [posts, setPosts] = useState([
@@ -94,11 +90,12 @@ const Home = () => {
       comments: [],
     },
     
-  ]);
+  ])};
 
 const UploadImage = () => {
   const [image, setImage] = useState(null);
   const [caption, setCaption] = useState("");
+}
 
   const handleImageUpload = (event) => {
     const selectedImage = event.target.files[0];
@@ -155,8 +152,6 @@ const UploadImage = () => {
       )}
     </div>
   );
-};
-
 
 
   const [newComment, setNewComment] = useState("");
@@ -177,7 +172,8 @@ const UploadImage = () => {
     const uploadImage = () => {
         const formData = new FormData()
         formData.append("file", imageSelected)
-        formData.append("upload_preset", "jtj4c4ac")
+        formData.append("upload_preset", "jtj4c4ac");
+    }
 
   const handleCommentSubmit = (postId) => {
     const updatedPosts = posts.map((post) => {
@@ -264,22 +260,3 @@ const UploadImage = () => {
   }
 
   export default Home;
-export default Home;
-const Home = () => {
-    return (
-        <div className="home">
-            <div className="home__container">
-                <div className="home__left">
-                    {/* <ProfileSide/> */}
-                </div>
-                <div className="home__middle">
-                    {/* <PostSide/> */}
-                </div>
-                <div className="home__right">
-                    {/* <RightSide/> */}
-                </div>
-            </div>
-        </div>
-    )
-}
-export default Home
