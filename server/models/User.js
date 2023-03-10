@@ -53,7 +53,6 @@ const userSchema = new Schema({
       ref: 'Thought',
     },
   ],
-});
 
 // set up pre-save middleware to create password
 userSchema.pre('save', async function (next) {
