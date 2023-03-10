@@ -1,3 +1,9 @@
+@media only screen and (max-width: 768px) {
+    .Home {
+        flex-direction: column;
+    }
+}
+
 .Home {
     background-color: #f5f5f5;
     height: 100vh;
@@ -121,7 +127,7 @@
 }
 
 .upload-container {
-    position: fixed;
+    position: absolute;
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
@@ -133,8 +139,13 @@
     cursor: pointer;
     font-weight: bold;
     transition: all 0.3s ease;
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 70px;
+}
+
+.upload-container:hover {
+    background-color: #333;
+    color: #fff;
 }
 
 .upload-label {
@@ -142,21 +153,13 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: bold;
-    color: #777;
+    color: #333;
     text-align: center;
     cursor: pointer;
     z-index: -1;
 }
 
-.file-input {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    cursor: pointer;
-    font-size: 0;
-}
+
+
