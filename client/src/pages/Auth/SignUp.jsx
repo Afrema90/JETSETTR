@@ -19,6 +19,7 @@ function SignUp(props) {
     })
     const token = mutationResponse.data.addUser.token;
     Auth.login(token);
+    window.location.assign('/');
   } catch (error) {
     console.log(error);
   }

@@ -44,11 +44,13 @@ body {
 
 header {
   /* position: relative; */
+  padding: 1em;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   width: 100vw;
   background-color: rgb(190, 97, 21);
-  height: 120px;
+  height: fit-content;
   justify-content: space-between;
 }
 
@@ -66,12 +68,18 @@ footer {
 }
 
 .bannerLogo {
+  margin: 1em;
   border-radius: 50%;
-  scale: 95%;
+  width: 120px;
+  height: 120px;
+}
+
+.signupTitle {
+  margin: 1.5em auto;
 }
 
 .infoInput {
-  margin: 1em;
+  margin: 1.2em auto;
   padding: .45em;
   width: 90%;
   letter-spacing: 1px;
@@ -134,6 +142,7 @@ footer {
 }
 
 .welcomeMessage {
+  margin: 1em auto;
   opacity: 1;
   text-align: center;
   font-family: inherit;
@@ -143,18 +152,15 @@ footer {
 
 
 @media(max-width: 850px) {
- font-size: 20px;
+  html { font-size: 20px;}
 }
 
 @media(max-width: 700px) {
-  font-size: 18px;
-
+  html { font-size: 18px;}
 }
 
 @media(max-width: 400px) {
-
- font-size: 16px;
-
+  html { font-size: 16px;}
 }
 
 @media(max-width: 300px) {
