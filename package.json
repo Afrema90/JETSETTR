@@ -23,5 +23,9 @@
   "homepage": "https://github.com/Afrema90/JETSETTR#readme",
   "devDependencies": {
     "concurrently": "^7.6.0"
-  }
+  },
+  "engines": {
+		"node": "v16.18.0",
+    "npm": "8.19.2"
+	}
 }

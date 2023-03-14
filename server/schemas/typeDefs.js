@@ -26,7 +26,6 @@ type Mutation {
         username: String!
         email: String!
         password: String!
-        confirmPassword: String!
       ): Auth
     
       login(email: String!, password: String!): Auth 

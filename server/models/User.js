@@ -5,7 +5,6 @@ const userSchema = new Schema({
   username: {
     type: String,
     default: null,
-
     required: true,
     unique: true,
     trim: true,
@@ -47,22 +46,22 @@ userSchema.pre('save', async function (next) {
 // userSchema.methods.isCorrectPassword = async function (password) {
 //   return bcrypt.compare(password, this.password);
 // };
-  thoughts: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: 'Thought',
-    },
-  ],
+  // thoughts: [
+  //   {
+  //     type: Schema.Types.ObjectId,
+  //     ref: 'Thought',
+  //   },
+  // ],
 
-// set up pre-save middleware to create password
-userSchema.pre('save', async function (next) {
-  if (this.isNew || this.isModified('password')) {
-    const saltRounds = 10;
-    this.password = await bcrypt.hash(this.password, saltRounds);
-  }
+// // set up pre-save middleware to create password
+// userSchema.pre('save', async function (next) {
+//   if (this.isNew || this.isModified('password')) {
+//     const saltRounds = 10;
+//     this.password = await bcrypt.hash(this.password, saltRounds);
+//   }
 
-  next();
-});
+//   next();
+// });
 
 // compare the incoming password with the hashed password
 userSchema.methods.isCorrectPassword = async function (password) {
