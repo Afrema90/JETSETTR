@@ -38,7 +38,7 @@ body {
     border-radius:10px;
     padding: 20px; */
     margin: auto;
-    height: auto;
+    min-height: 90vh;
     overflow-x: hidden;
 }
 
@@ -150,6 +150,13 @@ footer {
   font-size: 2.5em;
 }
 
+.about_page {
+  color: white;
+  text-align: center;
+  margin: auto;
+  padding: 20px;
+  vertical-align: middle;
+}
 
 @media(max-width: 850px) {
   html { font-size: 20px;}
@@ -164,7 +171,6 @@ footer {
 }
 
 @media(max-width: 300px) {
-font-size: 14px;
-
+html {font-size: 14px;}
 }
 

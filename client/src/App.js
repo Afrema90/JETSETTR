@@ -5,12 +5,13 @@ import "./pages/Home/Home.css";
 import AuthorizationMain from "./pages/Auth/Auth";
 import "./pages/Auth/Auth.css";
 import "./app.css";
-// import Profile from "./pages/Profile/Profile";
+import Profile from "./pages/Profile/Profile";
 import SignUp from "./pages/Auth/SignUp";
 import "./pages/Home/Home.css";
 import MainHeader from "./headers/MainHeader";
 import MainFooter from "./footers/MainFooter";
 import NotFound from "./pages/NotFound/NotFound";
+import About from './About.jsx';
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {
@@ -45,15 +46,13 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <MainHeader />
-        <div>
+        <div className="App">
           <Routes>
             <Route path="/Home" element={<Home />} />
+            <Route path="/About" element={<About />} />
             <Route path="/" element={<AuthorizationMain />} />
             <Route path="/SignUp" element={<SignUp />} />
-            {/* <Route 
-                path="/Profile" 
-                element={<Profile />} 
-              /> */}
+            <Route path="/Profile" element={<Profile />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
