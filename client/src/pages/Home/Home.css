@@ -127,20 +127,21 @@
 }
 
 .upload-container {
-    position: absolute;
+    /* position: absolute;
     top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 50%; */
+    /* transform: translateX(-50%); */
+    margin: auto;
     border: none;
     background-color: #001a37;
     color: #fff;
     padding: 10px;
-    border-radius: 50%;
+    border-radius: 20px;
     cursor: pointer;
     font-weight: bold;
     transition: all 0.3s ease;
-    width: 70px;
-    height: 70px;
+    /* width: 70px;
+    height: 70px; */
 }
 
 .upload-container:hover {
