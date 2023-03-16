@@ -5,7 +5,7 @@ import "./pages/Home/Home.css";
 import AuthorizationMain from "./pages/Auth/Auth";
 import "./pages/Auth/Auth.css";
 import "./app.css";
-import Profile from "./pages/Profile/Profile";
+// import Profile from "./pages/Profile/Profile";
 import SignUp from "./pages/Auth/SignUp";
 import "./pages/Home/Home.css";
 import MainHeader from "./headers/MainHeader";
@@ -23,7 +23,7 @@ import {
 import { setContext } from "@apollo/client/link/context";
 
 const httpLink = createHttpLink({
-  uri: `http://localhost:3001/graphql`,
+  uri: `/graphql`,
 });
 
 const authLink = setContext((_, { headers }) => {
@@ -52,7 +52,7 @@ function App() {
             <Route path="/About" element={<About />} />
             <Route path="/" element={<AuthorizationMain />} />
             <Route path="/SignUp" element={<SignUp />} />
-            <Route path="/Profile" element={<Profile />} />
+            {/* <Route path="/Profile" element={<Profile />} /> */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
