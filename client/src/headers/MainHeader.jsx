@@ -41,7 +41,7 @@ function MainHeader() {
 <div className="navLinks">
 <a className="navlink" href="/home">Home</a>
 <a className="navlink"  href="/about">About</a>
-<a className="navlink"  href="/profile">Profile</a>
+{/* <a className="navlink"  href="/profile">Profile</a> */}
 <button className="navlink" onClick={logout}>Log Out</button></div>
 </>
         ) : ( <>
